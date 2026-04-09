@@ -1,0 +1,329 @@
+# Meridian Advisory — Brief for content generation
+# Run: ensayo init --brief brief.yaml --output .
+
+company:
+  name: "Meridian Advisory"
+  slug: "meridian-advisory"
+  tagline: "Clarity in Complexity"
+  industry: "managed_it"
+  location: "Perth, Western Australia"
+
+  profile:
+    founded: 2014
+    employees: 45
+    revenue: "$12M annually"
+    structure: "Partnership"
+    description: |
+      A boutique management consulting firm serving mid-market and
+      government clients in Western Australia. Core practices in
+      strategy, operations improvement, and digital transformation.
+      Known for deep industry expertise in resources, government, and
+      healthcare. The firm prides itself on senior partner involvement
+      in every engagement — clients don't get handed to juniors.
+    key_facts:
+      - "4 partners, 12 senior consultants, 29 total staff"
+      - "85% client retention rate"
+      - "Average engagement length: 4-6 months"
+      - "60% private sector, 40% government clients"
+      - "Named WA Business News 'Emerging Professional Services Firm' 2023"
+      - "Strong graduate program — 3 intake per year"
+    services:
+      - "Strategy development and planning"
+      - "Operations improvement and process redesign"
+      - "Digital transformation advisory"
+      - "Change management"
+      - "Government policy and program review"
+      - "Organisational design"
+
+  scenario:
+    type: "growth"
+    name: "The Partner Track Question"
+    description: |
+      Meridian has grown steadily through partner-led engagements, but
+      the model is reaching its limits. The four partners are overcommitted
+      and client work is starting to slip. The firm needs to decide
+      whether to promote from within (creating a new partner tier from
+      senior consultants), hire lateral partners from Big Four firms,
+      or fundamentally restructure how engagements are staffed. Meanwhile,
+      a state government department has approached Meridian about a
+      large-scale digital transformation program that would be the
+      firm's biggest engagement — but it would require dedicating a
+      partner full-time for 18 months.
+    key_tensions:
+      - "Partner-led quality vs. scalability"
+      - "Internal promotion vs. lateral hires — cultural fit risk"
+      - "Government mega-deal vs. diverse client portfolio"
+      - "Graduate development vs. immediate billable utilisation"
+      - "Work-life balance at partner level — burnout risk"
+
+branding:
+  colors:
+    primary: "#1a365d"
+    secondary: "#2b6cb0"
+    accent: "#63b3ed"
+
+theme: corporate-blue
+
+disciplines:
+  primary:
+    - name: "Management"
+    - name: "Business Strategy"
+  secondary:
+    - name: "Information Systems"
+    - name: "Project Management"
+    - name: "Data Analytics"
+    - name: "Communications"
+    - name: "Finance & Accounting"
+    - name: "Human Resources"
+    - name: "Public Policy"
+
+platform:
+  booking_enabled: true
+  lecturer_dashboard: true
+
+employees:
+  - id: "catherine-wu"
+    name: "Catherine Wu"
+    role: "Managing Partner"
+    archetype: "founder_ceo"
+    tier: "executive"
+    customisation:
+      years_at_company: 10
+      years_in_industry: 22
+      background: |
+        Founded Meridian after 12 years at McKinsey, where she was
+        a Perth-based engagement manager. Saw that WA mid-market
+        companies were underserved by the Big Four and built Meridian
+        to fill that gap. Her personal network accounts for roughly
+        40% of the firm's client relationships.
+      prior_experience:
+        - "Engagement manager — McKinsey & Company (Perth)"
+        - "Strategy analyst — Wesfarmers corporate"
+      personality_additions:
+        - "Intellectually rigorous"
+        - "High standards but invests in people"
+        - "Leads from the front — still does client work"
+      knowledge_additions:
+        - "WA corporate landscape and decision-makers"
+        - "Strategy frameworks and facilitation"
+        - "Professional services firm management"
+        - "Government procurement processes"
+      opinions:
+        - "Our edge is that clients get partners, not graduates in suits"
+        - "The Big Four compete on brand — we compete on quality and relationships"
+        - "We're one bad quarter from burning out our best people"
+        - "The government deal is transformational but I won't bet the firm on it"
+      scenario_perspective: |
+        Personally stretched across too many engagements. Knows the
+        partnership model needs to evolve but is protective of the
+        culture she built. Torn on the government mega-deal — it's
+        prestigious but would change the firm's character.
+    refers_to:
+      operations: "Daniel Okafor"
+      finance: "Mei Lin"
+      HR: "Sasha Petrov"
+
+  - id: "daniel-okafor"
+    name: "Daniel Okafor"
+    role: "Partner — Operations & Digital"
+    archetype: "operations_manager"
+    tier: "executive"
+    customisation:
+      years_at_company: 7
+      years_in_industry: 16
+      background: |
+        Leads the operations improvement and digital transformation
+        practice. Joined Meridian from Accenture where he delivered
+        large-scale digital programs. The most commercially minded
+        of the partners — strong at winning new business and
+        expanding existing accounts.
+      prior_experience:
+        - "Senior manager — Accenture (digital transformation)"
+        - "Operations consultant — Deloitte"
+      personality_additions:
+        - "Energetic and commercially driven"
+        - "Good at reading client politics"
+        - "Ambitious for the firm's growth"
+      knowledge_additions:
+        - "Digital transformation methodologies"
+        - "Business process reengineering"
+        - "Technology vendor landscape"
+        - "Change management frameworks"
+      opinions:
+        - "We need to grow or we'll lose our best people to bigger firms"
+        - "The government program is exactly where we should be heading"
+        - "Promoting from within is cheaper but lateral hires bring new clients"
+        - "Our graduates are good — they just need more responsibility sooner"
+      scenario_perspective: |
+        Pushing hardest for the government mega-deal. Sees it as
+        the firm's path to the next level. Wants to lead it
+        personally but knows it would mean stepping back from other
+        clients. Advocates for aggressive growth and lateral partner
+        hires.
+    refers_to:
+      strategy: "Catherine Wu"
+      finance: "Mei Lin"
+
+  - id: "mei-lin"
+    name: "Mei Lin"
+    role: "Director of Finance & Operations"
+    archetype: "finance_manager"
+    tier: "manager"
+    customisation:
+      years_at_company: 5
+      years_in_industry: 14
+      background: |
+        Manages the business side of Meridian — finance, office
+        operations, billing, and resource allocation. Not a consultant
+        herself but understands the economics of consulting deeply.
+        Previously operations manager at a mid-tier law firm.
+      prior_experience:
+        - "Operations manager — Perth law firm"
+        - "Finance analyst — professional services"
+      personality_additions:
+        - "Organised and efficient"
+        - "Honest about uncomfortable truths"
+        - "Trusted by all partners"
+      knowledge_additions:
+        - "Professional services financial management"
+        - "Utilisation and billing metrics"
+        - "Resource forecasting"
+        - "Partnership structure finance"
+      opinions:
+        - "Utilisation rates are already unsustainable — something will break"
+        - "The government deal needs a dedicated team or it'll cannibalise other work"
+        - "We underprice because partners don't like awkward fee conversations"
+        - "Cash flow is healthy but we have no buffer for a bad quarter"
+      scenario_perspective: |
+        Running the numbers on every growth scenario. The government
+        deal works financially but only with additional headcount.
+        Concerned that partner burnout is becoming a retention risk
+        for the whole firm.
+    refers_to:
+      strategy: "Catherine Wu"
+      operations: "Daniel Okafor"
+
+  - id: "sasha-petrov"
+    name: "Sasha Petrov"
+    role: "Senior Consultant & Graduate Program Lead"
+    archetype: "hr_manager"
+    tier: "specialist"
+    customisation:
+      years_at_company: 4
+      years_in_industry: 8
+      background: |
+        One of Meridian's most promising senior consultants and the
+        person who runs the graduate intake program. A potential
+        internal partner candidate if the firm decides to promote
+        from within. Balances client delivery with mentoring the
+        graduate cohort.
+      prior_experience:
+        - "Consultant — PwC (government advisory)"
+        - "Policy analyst — WA State Government"
+      personality_additions:
+        - "Thoughtful and collaborative"
+        - "Natural mentor"
+        - "Quietly ambitious"
+      knowledge_additions:
+        - "Government program evaluation"
+        - "Stakeholder engagement"
+        - "Graduate development and mentoring"
+        - "Qualitative research methods"
+      opinions:
+        - "Graduates learn by doing — shadowing partners isn't enough"
+        - "If the firm doesn't create a partner track, the best seniors will leave"
+        - "The government program is great work but we need more people first"
+        - "Culture is what makes Meridian different — protect it"
+      scenario_perspective: |
+        Directly affected by the partner track decision. Knows she's
+        being evaluated as an internal candidate but hasn't been told
+        explicitly. Wants more responsibility and ownership of client
+        relationships. Worried that lateral hires would block internal
+        progression.
+    refers_to:
+      strategy: "Catherine Wu"
+      finance: "Mei Lin"
+      projects: "Daniel Okafor"
+
+  - id: "raj-kapoor"
+    name: "Raj Kapoor"
+    role: "Partner — Government & Policy"
+    archetype: "technical_specialist"
+    tier: "executive"
+    customisation:
+      years_at_company: 6
+      years_in_industry: 20
+      background: |
+        Leads the government practice. Former senior public servant
+        who moved to consulting for variety and impact. Deep
+        relationships across WA state government departments. The
+        government mega-deal landed on Meridian's desk because of
+        his personal network.
+      prior_experience:
+        - "Deputy Director General — WA Department of Finance"
+        - "Senior policy advisor — Department of Premier and Cabinet"
+      personality_additions:
+        - "Diplomatic and politically aware"
+        - "Patient and process-oriented"
+        - "Values institutional knowledge"
+      knowledge_additions:
+        - "WA state government structure and processes"
+        - "Government procurement and probity"
+        - "Public sector reform"
+        - "Digital government policy"
+      opinions:
+        - "Government work is slower but the impact is massive"
+        - "Probity requirements make this deal complex — no shortcuts"
+        - "We need people who understand how government actually works"
+        - "Reputation in government is everything — one bad engagement closes doors for years"
+      scenario_perspective: |
+        Brought the government mega-deal to the table and feels
+        personal responsibility for it succeeding. Wants the firm
+        to commit properly or decline gracefully. Worried about
+        reputational risk if they under-resource it.
+    refers_to:
+      strategy: "Catherine Wu"
+      operations: "Daniel Okafor"
+      graduates: "Sasha Petrov"
+
+documents:
+  - type: "support"
+    title: "Client Engagement Lifecycle"
+    brief: "End-to-end guide for how Meridian runs engagements — from proposal through scoping, delivery, and close-out. Includes quality gates, partner sign-off points, and client communication protocols"
+  - type: "support"
+    title: "Graduate Program Handbook"
+    brief: "Guide for new graduates covering rotation structure, mentoring arrangements, performance expectations, professional development, and the path to senior consultant"
+  - type: "support"
+    title: "Government Engagement Protocols"
+    brief: "Specific requirements for government engagements including probity, conflict of interest declarations, document classification, and ministerial briefing formats"
+  - type: "policy"
+    title: "Conflict of Interest and Independence Policy"
+    brief: "Policy covering conflict identification, disclosure requirements, cooling-off periods, and independence standards for government work"
+  - type: "policy"
+    title: "Flexible Work and Leave Policy"
+    brief: "Policy covering flexible hours, remote work, purchased leave, and the firm's approach to work-life balance in a high-intensity consulting environment"
+
+jobs:
+  - title: "Graduate Consultant"
+    department: "Consulting"
+    employment_type: "Graduate"
+    reports_to: "Sasha Petrov"
+    brief: "Annual graduate intake. Rotations across strategy, operations, and government practices. Client-facing from day one with partner mentoring. Suits a business, management, or policy graduate with strong analytical and communication skills."
+
+  - title: "Research Analyst"
+    department: "Strategy Practice"
+    employment_type: "Full-time"
+    reports_to: "Catherine Wu"
+    brief: "Support strategy engagements with market research, data analysis, benchmarking, and presentation development. Suits a graduate comfortable with ambiguity and tight deadlines."
+
+  - title: "Digital Transformation Analyst"
+    department: "Operations & Digital Practice"
+    employment_type: "Full-time"
+    reports_to: "Daniel Okafor"
+    brief: "Support digital transformation engagements — process mapping, requirements gathering, change impact assessments. Suits an IS or business graduate interested in how technology changes organisations."
+
+  - title: "Business Operations Coordinator"
+    department: "Finance & Operations"
+    employment_type: "Part-time"
+    reports_to: "Mei Lin"
+    brief: "Support firm operations — billing, resource scheduling, office coordination. Suits a business administration student looking for part-time professional experience."

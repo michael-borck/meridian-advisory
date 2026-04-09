@@ -1,0 +1,18 @@
+branding:
+  accent: '#63b3ed'
+  primary: '#1a365d'
+  secondary: '#2b6cb0'
+careers:
+  label: Job Opportunities
+  show_apply_form: true
+  submit_url: ''
+chatbot:
+  booking_api: ''
+  booking_enabled: true
+  mode: llm
+  platform: anythingllm
+company:
+  name: Meridian Advisory
+  slug: meridian-advisory
+  tagline: Clarity in Complexity
+theme: corporate-blue
