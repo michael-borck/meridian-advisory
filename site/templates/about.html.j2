@@ -1,0 +1,89 @@
+{% extends "base.html.j2" %}
+
+{% block title %}About — Meridian Advisory{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="marg">
+        <aside class="marg-aside hero-aside">
+            <p class="section-num">01 / About</p>
+            <p class="label" style="margin-top: var(--md-px-4);">Established {{ profile.founded or 2014 }}<br>Perth, WA<br>Partnership</p>
+        </aside>
+        <div>
+            <p class="eyebrow">About the firm</p>
+            <h1 class="display">A small firm, <span class="accent-rule">on purpose.</span></h1>
+            <p class="hero-tagline">{{ (profile.description or "")|trim }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-pad">
+    <div class="marg">
+        <aside class="marg-aside">
+            <p class="section-num">02 / Facts</p>
+        </aside>
+        <div>
+            <p class="eyebrow">By the numbers</p>
+            <h2 style="margin-bottom: var(--md-px-6); max-width: 16ch;">The firm at a glance.</h2>
+
+            {% if profile.key_facts %}
+            <div class="practices">
+                {% for fact in profile.key_facts[:7] %}
+                <div class="practice-row">
+                    <div class="practice-num">0{{ loop.index }}</div>
+                    <div>
+                        <div class="practice-title" style="font-size: 1.2rem;">{{ fact }}</div>
+                    </div>
+                    <div class="practice-meta">
+                        <strong>FY26</strong>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="section-pad" style="background: var(--md-bg-2); border-top: 1px solid var(--md-line); border-bottom: 1px solid var(--md-line);">
+    <div class="marg">
+        <aside class="marg-aside">
+            <p class="section-num">03 / Partners</p>
+        </aside>
+        <div>
+            <p class="eyebrow">The partnership</p>
+            <h2 style="margin-bottom: var(--md-px-3); max-width: 18ch;">The four partners.</h2>
+            <p class="lead" style="margin-bottom: var(--md-px-6);">Every engagement at Meridian is led by a partner — not handed to a graduate in a suit. These are the four people you would meet.</p>
+
+            <div class="partners">
+                {% for emp in employees if emp.tier == 'executive' %}
+                <article class="partner">
+                    <div class="partner-portrait">{{ emp.name[0] }}</div>
+                    <div>
+                        <h3>{{ emp.name }}</h3>
+                        <p class="partner-role">{{ emp.role }}</p>
+                        <p class="partner-bio">{{ (emp.background or "")[:300] }}{% if (emp.background or "")|length > 300 %}…{% endif %}</p>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-block">
+    <div class="marg">
+        <aside class="marg-aside">
+            <span class="label">Continue</span>
+            <p class="section-num" style="color: rgba(255,255,255,0.5); margin-top: var(--md-px-2);">04 / Practices</p>
+        </aside>
+        <div>
+            <h2>Read about our six practices.</h2>
+            <p>Strategy, operations, digital transformation, change management, government policy, and organisational design. All partner-led, all scoped tightly, all delivered with senior involvement throughout.</p>
+            <div class="hero-cta">
+                <a href="/practices.html" class="btn btn-primary btn-arrow">Practices</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

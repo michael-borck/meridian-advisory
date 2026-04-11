@@ -1,0 +1,61 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Staff portal — Meridian Advisory{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="marg">
+        <aside class="marg-aside hero-aside">
+            <p class="section-num">Staff portal</p>
+            <p class="label" style="margin-top: var(--md-px-4);">Internal<br>Authenticated</p>
+        </aside>
+        <div>
+            <p class="eyebrow">Internal</p>
+            <h1 class="display">Welcome <span class="accent-rule">back.</span></h1>
+            <p class="hero-tagline">Quick access to the people, documents, and systems you use every day.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-pad">
+    <div class="marg">
+        <aside class="marg-aside">
+            <p class="section-num">02 / Tools</p>
+        </aside>
+        <div>
+            <div class="practices">
+                <a href="/staff/directory.html" class="practice-row" style="text-decoration: none; color: inherit;">
+                    <div class="practice-num">01</div>
+                    <div>
+                        <div class="practice-title">Directory</div>
+                        <p class="practice-desc">Find a colleague, reach a partner, chat with our embedded assistants for fast answers on engagements and clients.</p>
+                    </div>
+                    <div class="practice-meta">
+                        <strong>People</strong>
+                    </div>
+                </a>
+                <a href="/staff/documents.html" class="practice-row" style="text-decoration: none; color: inherit;">
+                    <div class="practice-num">02</div>
+                    <div>
+                        <div class="practice-title">Documents</div>
+                        <p class="practice-desc">Engagement lifecycle guide, government engagement protocols, conflict-of-interest policy, graduate program handbook.</p>
+                    </div>
+                    <div class="practice-meta">
+                        <strong>Knowledge</strong>
+                    </div>
+                </a>
+                <a href="#" class="practice-row" style="text-decoration: none; color: inherit;">
+                    <div class="practice-num">03</div>
+                    <div>
+                        <div class="practice-title">Engagement system</div>
+                        <p class="practice-desc">Active engagements, weekly checkpoints, partner allocations, and the proposal pipeline. Coming soon.</p>
+                    </div>
+                    <div class="practice-meta">
+                        <strong>Operations</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

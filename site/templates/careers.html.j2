@@ -1,0 +1,91 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Careers — Meridian Advisory{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="marg">
+        <aside class="marg-aside hero-aside">
+            <p class="section-num">01 / Careers</p>
+            <p class="label" style="margin-top: var(--md-px-4);">Graduate intake<br>3 cohorts /yr<br>Partner-mentored</p>
+        </aside>
+        <div>
+            <p class="eyebrow">Careers / FY26 intake</p>
+            <h1 class="display">Work with <span class="accent-rule">partners.</span><br>From day one.</h1>
+            <p class="hero-tagline">A boutique firm cannot afford to hide graduates behind senior consultants — and we don't want to. From your first engagement, you sit at the partner's table, contribute to the work, and own real pieces of client deliverables.<sup>1</sup></p>
+        </div>
+    </div>
+</section>
+
+<section class="section-pad">
+    <div class="marg">
+        <aside class="marg-aside">
+            <p class="section-num">02 / Open positions</p>
+        </aside>
+        <div>
+            <p class="eyebrow">Open positions</p>
+            <h2 style="margin-bottom: var(--md-px-3); max-width: 18ch;">{{ jobs|length }} positions open.</h2>
+            <p class="lead" style="margin-bottom: var(--md-px-6);">Meridian recruits in three cohorts each year. All positions are based in our Perth office. Application deadlines are listed on each role.</p>
+
+            <div class="practices">
+                {% for job in jobs %}
+                <div class="practice-row">
+                    <div class="practice-num">0{{ loop.index }}</div>
+                    <div>
+                        <div class="practice-title">{{ job.title }}</div>
+                        <p class="practice-desc"><strong style="color: var(--md-text);">{{ job.department or "" }}</strong>{% if job.reports_to %} &nbsp;·&nbsp; reports to {{ job.reports_to }}{% endif %}</p>
+                        <p class="practice-desc" style="margin-top: var(--md-px-2);">{{ (job.brief or job.summary or "")[:220] }}{% if (job.brief or job.summary or "")|length > 220 %}…{% endif %}</p>
+                    </div>
+                    <div class="practice-meta">
+                        <strong>{{ job.employment_type or "Full-time" }}</strong><br>
+                        Perth WA<br>
+                        <a href="/careers/{{ job.slug }}.html" class="btn-link" style="font-size: 0.78rem; margin-top: var(--md-px-2);">Read role</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-pad" style="background: var(--md-bg-2); border-top: 1px solid var(--md-line); border-bottom: 1px solid var(--md-line);">
+    <div class="marg">
+        <aside class="marg-aside">
+            <p class="section-num">03 / Process</p>
+        </aside>
+        <div>
+            <p class="eyebrow">Hiring process</p>
+            <h2 style="margin-bottom: var(--md-px-3); max-width: 18ch;">Three rounds. No case interviews.</h2>
+            <p class="lead" style="margin-bottom: var(--md-px-6);">We do not run case interviews because we believe they test for case-interview skill, not consulting skill. Our process is built around real conversations about real work.</p>
+
+            <div class="exhibits">
+                <div class="exhibit">
+                    <p class="exhibit-label">Round&nbsp;01<span class="exhibit-label-title">&nbsp;Application</span></p>
+                    <div class="exhibit-num">CV<span class="unit">+letter</span></div>
+                    <p class="exhibit-caption">A CV and a one-page letter on a problem you have helped solve. Read by a partner, replied to within five business days.</p>
+                </div>
+                <div class="exhibit">
+                    <p class="exhibit-label">Round&nbsp;02<span class="exhibit-label-title">&nbsp;Conversation</span></p>
+                    <div class="exhibit-num">60<span class="unit">min</span></div>
+                    <p class="exhibit-caption">An hour with two consultants and a partner. Real questions about your experience, your interests, and your reasoning.</p>
+                </div>
+                <div class="exhibit">
+                    <p class="exhibit-label">Round&nbsp;03<span class="exhibit-label-title">&nbsp;Offer</span></p>
+                    <div class="exhibit-num">10<span class="unit">days</span></div>
+                    <p class="exhibit-caption">References, then a written offer including salary, study support, and start date. Decisions within ten business days of round two.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-pad-sm">
+    <div class="wrap">
+        <div class="footnotes">
+            <ol>
+                <li>Graduate consultants are paired with a partner mentor on day one and receive structured rotations across the strategy, operations, and government practices in the first 12 months. Performance reviews are quarterly.</li>
+            </ol>
+        </div>
+    </div>
+</section>
+{% endblock %}

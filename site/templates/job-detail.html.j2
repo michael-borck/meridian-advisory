@@ -1,0 +1,77 @@
+{% extends "base.html.j2" %}
+
+{% block title %}{{ job.title }} — Meridian Advisory{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="marg">
+        <aside class="marg-aside hero-aside">
+            <p class="section-num">Role</p>
+            <p class="label" style="margin-top: var(--md-px-4);">
+                <a href="/careers.html" style="color: var(--md-accent); border-bottom: 1px solid var(--md-accent);">← All positions</a>
+            </p>
+        </aside>
+        <div>
+            <p class="eyebrow">{{ job.department or "Open position" }}</p>
+            <h1 class="display" style="font-size: clamp(2.25rem, 5vw, 4rem);">{{ job.title }}</h1>
+            <p class="hero-tagline">{{ job.brief or job.summary or "" }}</p>
+
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <div class="hero-meta-num" style="font-size: 1.4rem;">{{ job.employment_type or "Full-time" }}</div>
+                    <div class="hero-meta-label">Type</div>
+                </div>
+                {% if job.reports_to %}
+                <div class="hero-meta-item">
+                    <div class="hero-meta-num" style="font-size: 1.4rem;">{{ job.reports_to }}</div>
+                    <div class="hero-meta-label">Reports to</div>
+                </div>
+                {% endif %}
+                <div class="hero-meta-item">
+                    <div class="hero-meta-num" style="font-size: 1.4rem;">Perth WA</div>
+                    <div class="hero-meta-label">Location</div>
+                </div>
+                <div class="hero-meta-item">
+                    <div class="hero-meta-num" style="font-size: 1.4rem;">3<span class="unit">/yr</span></div>
+                    <div class="hero-meta-label">Intake cohorts</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-pad">
+    <div class="marg">
+        <aside class="marg-aside">
+            <p class="section-num">02 / Detail</p>
+        </aside>
+        <div>
+            {% if job.description %}
+            <article class="prose">
+                {{ job.description | markdown }}
+            </article>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="contact-block">
+    <div class="marg">
+        <aside class="marg-aside">
+            <span class="label">Apply</span>
+            <p class="section-num" style="color: rgba(255,255,255,0.5); margin-top: var(--md-px-2);">03 / Submit</p>
+        </aside>
+        <div>
+            <h2>Submit your application.</h2>
+            <p>A CV and a one-page letter on a problem you have helped solve. Read by a partner, replied to within five business days.</p>
+            <div class="hero-cta">
+                {% if company_url %}
+                <a href="{{ company_url }}" class="btn btn-primary btn-arrow">Apply via WorkReady</a>
+                {% else %}
+                <a href="/contact.html" class="btn btn-primary btn-arrow">Get in touch</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

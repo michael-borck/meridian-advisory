@@ -1,0 +1,44 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Staff directory — Meridian Advisory{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="marg">
+        <aside class="marg-aside hero-aside">
+            <p class="section-num">Staff portal</p>
+            <p class="label" style="margin-top: var(--md-px-4);">Directory</p>
+        </aside>
+        <div>
+            <p class="eyebrow">People</p>
+            <h1 class="display">Find a <span class="accent-rule">colleague.</span></h1>
+            <p class="hero-tagline">Partners, senior consultants, and operating staff. Click any name for their profile and to start a conversation.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-pad">
+    <div class="marg">
+        <aside class="marg-aside">
+            <p class="section-num">02 / People</p>
+        </aside>
+        <div>
+            <p class="exhibit-label">Exhibit&nbsp;01<span class="exhibit-label-title">&nbsp;Meridian people</span></p>
+
+            <div class="partners">
+                {% for emp in employees %}
+                <article class="partner">
+                    <div class="partner-portrait">{{ emp.name[0] }}</div>
+                    <div>
+                        <h3>{{ emp.name }}</h3>
+                        <p class="partner-role">{{ emp.role }}</p>
+                        <p class="partner-bio">{{ (emp.background or "")[:200] }}{% if (emp.background or "")|length > 200 %}…{% endif %}</p>
+                        <p class="label" style="margin-top: var(--md-px-3);">Chat assistant — coming soon</p>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

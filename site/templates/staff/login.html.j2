@@ -1,0 +1,25 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Staff login — Meridian Advisory{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="marg">
+        <aside class="marg-aside hero-aside">
+            <p class="section-num">Staff portal</p>
+        </aside>
+        <div>
+            <p class="eyebrow">Sign in</p>
+            <h1 class="display">Welcome back.</h1>
+            <p class="hero-tagline" style="margin-bottom: var(--md-px-5);">Meridian staff only. Enter your work email and we will send you a 6-digit access code.</p>
+
+            <form id="login-form" style="max-width: 480px; display: grid; gap: var(--md-px-3); border: 1px solid var(--md-text); padding: var(--md-px-5); background: var(--md-bg);">
+                <label class="label" for="email">Work email</label>
+                <input type="email" id="email" name="email" required placeholder="firstname.lastname@meridianadvisory.com.au" style="padding: var(--md-px-3); background: var(--md-bg-2); border: 1px solid var(--md-line-2); color: var(--md-text); font-family: var(--md-font-body); font-size: 1rem;">
+                <button type="submit" class="btn btn-primary btn-arrow">Send code</button>
+                <p class="label" style="margin-top: var(--md-px-2);">Authentication coming soon — placeholder for the WorkReady simulation.</p>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

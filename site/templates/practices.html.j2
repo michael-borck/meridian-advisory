@@ -1,0 +1,93 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Practices — Meridian Advisory{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="marg">
+        <aside class="marg-aside hero-aside">
+            <p class="section-num">01 / Practices</p>
+            <p class="label" style="margin-top: var(--md-px-4);">Six practices<br>One operating model<br>Partner-led</p>
+        </aside>
+        <div>
+            <p class="eyebrow">What we do</p>
+            <h1 class="display">Six <span class="accent-rule">practices.</span></h1>
+            <p class="hero-tagline">Each practice is led by a partner with deep, named experience in the field. We do not have a "staff augmentation" model — every engagement is scoped, staffed, and accounted for personally.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-pad">
+    <div class="marg">
+        <aside class="marg-aside">
+            <p class="section-num">02 / The list</p>
+        </aside>
+        <div>
+            <p class="exhibit-label">Exhibit&nbsp;01<span class="exhibit-label-title">&nbsp;Practice list</span></p>
+
+            <div class="practices">
+                {% for svc in (profile.services or [])[:6] %}
+                <div class="practice-row">
+                    <div class="practice-num">0{{ loop.index }}</div>
+                    <div>
+                        <div class="practice-title">{{ svc }}</div>
+                        <p class="practice-desc">Tightly scoped engagements led by a single named partner with weekly checkpoint cadence. Engagements typically run four to six months from kickoff to close-out.</p>
+                    </div>
+                    <div class="practice-meta">
+                        <strong>Partner-led</strong><br>
+                        4–6 months
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-pad" style="background: var(--md-bg-2); border-top: 1px solid var(--md-line); border-bottom: 1px solid var(--md-line);">
+    <div class="marg">
+        <aside class="marg-aside">
+            <p class="section-num">03 / Method</p>
+        </aside>
+        <div>
+            <p class="eyebrow">How engagements run</p>
+            <h2 style="margin-bottom: var(--md-px-3); max-width: 18ch;">Three commitments on every engagement.</h2>
+            <p class="lead" style="margin-bottom: var(--md-px-6);">These are the things that don't change between practices, between client types, and between engagement sizes.</p>
+
+            <div class="exhibits">
+                <div class="exhibit">
+                    <p class="exhibit-label">Commitment&nbsp;01<span class="exhibit-label-title">&nbsp;Partner accountability</span></p>
+                    <div class="exhibit-num">1</div>
+                    <p class="exhibit-caption">A single named partner is accountable from kickoff to close-out. Not three. Not "the team." One.</p>
+                </div>
+                <div class="exhibit">
+                    <p class="exhibit-label">Commitment&nbsp;02<span class="exhibit-label-title">&nbsp;Weekly cadence</span></p>
+                    <div class="exhibit-num">7<span class="unit">days</span></div>
+                    <p class="exhibit-caption">Every engagement has a fixed weekly checkpoint with the partner and the client lead. Slips are visible immediately.</p>
+                </div>
+                <div class="exhibit">
+                    <p class="exhibit-label">Commitment&nbsp;03<span class="exhibit-label-title">&nbsp;Tight scope</span></p>
+                    <div class="exhibit-num">4–6<span class="unit">mo</span></div>
+                    <p class="exhibit-caption">Most engagements are scoped to a defined question with a defined deliverable. Long-term retainers are the exception, not the rule.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-block">
+    <div class="marg">
+        <aside class="marg-aside">
+            <span class="label">Engage</span>
+            <p class="section-num" style="color: rgba(255,255,255,0.5); margin-top: var(--md-px-2);">04 / Get in touch</p>
+        </aside>
+        <div>
+            <h2>Have a question that fits Meridian?</h2>
+            <p>Send us a short note about what you're trying to figure out. A partner will respond personally within two business days.</p>
+            <div class="hero-cta">
+                <a href="/contact.html" class="btn btn-primary btn-arrow">Start a conversation</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

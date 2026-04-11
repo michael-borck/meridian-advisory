@@ -1,0 +1,64 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Staff documents — Meridian Advisory{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="marg">
+        <aside class="marg-aside hero-aside">
+            <p class="section-num">Staff portal</p>
+            <p class="label" style="margin-top: var(--md-px-4);">Documents</p>
+        </aside>
+        <div>
+            <p class="eyebrow">Knowledge</p>
+            <h1 class="display">Documents and <span class="accent-rule">policies.</span></h1>
+            <p class="hero-tagline">Current versions only. Earlier versions are archived in the document management system and are available on request.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-pad">
+    <div class="marg">
+        <aside class="marg-aside">
+            <p class="section-num">02 / Practice guides</p>
+        </aside>
+        <div>
+            {% if docs.support %}
+            <p class="exhibit-label">Exhibit&nbsp;01<span class="exhibit-label-title">&nbsp;Practice guides</span></p>
+            <div class="practices" style="margin-bottom: var(--md-px-8);">
+                {% for doc in docs.support %}
+                <div class="practice-row">
+                    <div class="practice-num">0{{ loop.index }}</div>
+                    <div>
+                        <div class="practice-title">{{ doc.get('title', doc.slug.replace('-', ' ').title()) }}</div>
+                        <p class="practice-desc">{{ (doc.body or doc.brief or "")[:200] }}{% if (doc.body or doc.brief or "")|length > 200 %}…{% endif %}</p>
+                    </div>
+                    <div class="practice-meta">
+                        <strong>Support</strong>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if docs.policy %}
+            <p class="exhibit-label">Exhibit&nbsp;02<span class="exhibit-label-title">&nbsp;Firm policies</span></p>
+            <div class="practices">
+                {% for doc in docs.policy %}
+                <div class="practice-row">
+                    <div class="practice-num">0{{ loop.index }}</div>
+                    <div>
+                        <div class="practice-title">{{ doc.get('title', doc.slug.replace('-', ' ').title()) }}</div>
+                        <p class="practice-desc">{{ (doc.body or doc.brief or "")[:200] }}{% if (doc.body or doc.brief or "")|length > 200 %}…{% endif %}</p>
+                    </div>
+                    <div class="practice-meta">
+                        <strong>Policy</strong>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

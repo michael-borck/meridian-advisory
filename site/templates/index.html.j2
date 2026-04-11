@@ -1,39 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meridian Advisory — Clarity in Complexity</title>
-    <meta name="description" content="Meridian is a boutique Western Australian management consulting firm. Strategy, operations, digital transformation, and government policy advisory — partner-led on every engagement.">
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-    <link rel="stylesheet" href="/styles/main.css">
-</head>
-<body>
-    <header class="header">
-        <div class="header-inner">
-            <a href="/" class="brand">
-                <div class="brand-mark">M</div>
-                <div class="brand-name">
-                    <strong>Meridian Advisory</strong>
-                    <span>Strategy / Operations / Government</span>
-                </div>
-            </a>
-            <nav class="nav" aria-label="Primary">
-                <a href="/" class="active">Home</a>
-                <a href="/about.html" class="">About</a>
-                <a href="/practices.html" class="">Practices</a>
-                <a href="/careers.html" class="">Careers</a>
-                <a href="/contact.html" class="nav-cta">Get in touch</a>
-            </nav>
-        </div>
-    </header>
+{% extends "base.html.j2" %}
 
-    <main>
+{% block title %}Meridian Advisory — Clarity in Complexity{% endblock %}
+
+{% block content %}
 <section class="hero">
     <div class="marg">
         <aside class="marg-aside hero-aside">
             <p class="section-num">01 / Introduction</p>
-            <p class="label" style="margin-top: var(--md-px-4);">Meridian Advisory<br>Established 2014<br>Perth, Western Australia</p>
+            <p class="label" style="margin-top: var(--md-px-4);">Meridian Advisory<br>Established {{ profile.founded or 2014 }}<br>Perth, Western Australia</p>
         </aside>
         <div>
             <p class="eyebrow">A boutique management consulting firm</p>
@@ -41,7 +15,7 @@
                 Clarity, where most firms<br>
                 offer <span class="accent-rule">complexity.</span>
             </h1>
-            <p class="hero-tagline">Clarity in Complexity Meridian works with leadership teams in resources, government, and healthcare on the questions that matter most to their organisations — strategy, operations, and the transformation programs that decide whether ambition becomes reality.<sup>1</sup></p>
+            <p class="hero-tagline">{{ company.tagline or "Clarity in complexity." }} Meridian works with leadership teams in resources, government, and healthcare on the questions that matter most to their organisations — strategy, operations, and the transformation programs that decide whether ambition becomes reality.<sup>1</sup></p>
             <div class="hero-cta">
                 <a href="/practices.html" class="btn btn-primary btn-arrow">Our practices</a>
                 <a href="/about.html" class="btn btn-ghost btn-arrow">Read about the firm</a>
@@ -80,10 +54,11 @@
             <p class="lead" style="margin-bottom: var(--md-px-6);">Meridian's edge is that clients work directly with partners — not graduates in suits. Engagements are scoped tightly, staffed deliberately, and signed off personally.<sup>2</sup></p>
 
             <div class="practices">
+                {% for svc in (profile.services or [])[:6] %}
                 <div class="practice-row">
-                    <div class="practice-num">01</div>
+                    <div class="practice-num">0{{ loop.index }}</div>
                     <div>
-                        <div class="practice-title">Strategy development and planning</div>
+                        <div class="practice-title">{{ svc }}</div>
                         <p class="practice-desc">Scoped to a defined question with a partner-led team. Typical engagements run 4–6 months with weekly checkpoints and a single named partner accountable end-to-end.</p>
                     </div>
                     <div class="practice-meta">
@@ -91,61 +66,7 @@
                         4–6 months
                     </div>
                 </div>
-                <div class="practice-row">
-                    <div class="practice-num">02</div>
-                    <div>
-                        <div class="practice-title">Operations improvement and process redesign</div>
-                        <p class="practice-desc">Scoped to a defined question with a partner-led team. Typical engagements run 4–6 months with weekly checkpoints and a single named partner accountable end-to-end.</p>
-                    </div>
-                    <div class="practice-meta">
-                        <strong>Partner-led</strong><br>
-                        4–6 months
-                    </div>
-                </div>
-                <div class="practice-row">
-                    <div class="practice-num">03</div>
-                    <div>
-                        <div class="practice-title">Digital transformation advisory</div>
-                        <p class="practice-desc">Scoped to a defined question with a partner-led team. Typical engagements run 4–6 months with weekly checkpoints and a single named partner accountable end-to-end.</p>
-                    </div>
-                    <div class="practice-meta">
-                        <strong>Partner-led</strong><br>
-                        4–6 months
-                    </div>
-                </div>
-                <div class="practice-row">
-                    <div class="practice-num">04</div>
-                    <div>
-                        <div class="practice-title">Change management</div>
-                        <p class="practice-desc">Scoped to a defined question with a partner-led team. Typical engagements run 4–6 months with weekly checkpoints and a single named partner accountable end-to-end.</p>
-                    </div>
-                    <div class="practice-meta">
-                        <strong>Partner-led</strong><br>
-                        4–6 months
-                    </div>
-                </div>
-                <div class="practice-row">
-                    <div class="practice-num">05</div>
-                    <div>
-                        <div class="practice-title">Government policy and program review</div>
-                        <p class="practice-desc">Scoped to a defined question with a partner-led team. Typical engagements run 4–6 months with weekly checkpoints and a single named partner accountable end-to-end.</p>
-                    </div>
-                    <div class="practice-meta">
-                        <strong>Partner-led</strong><br>
-                        4–6 months
-                    </div>
-                </div>
-                <div class="practice-row">
-                    <div class="practice-num">06</div>
-                    <div>
-                        <div class="practice-title">Organisational design</div>
-                        <p class="practice-desc">Scoped to a defined question with a partner-led team. Typical engagements run 4–6 months with weekly checkpoints and a single named partner accountable end-to-end.</p>
-                    </div>
-                    <div class="practice-meta">
-                        <strong>Partner-led</strong><br>
-                        4–6 months
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -227,40 +148,27 @@
                 <span class="label">Section</span>
                 <p class="section-num">05 / Point of view</p>
             </aside>
-            <h3>The Partner Track Question</h3>
+            <h3>{{ scenario.name or "The Partner Track Question" }}</h3>
         </div>
 
         <div class="pov-body">
             <aside></aside>
             <div>
-                <p>Meridian has grown steadily through partner-led engagements, but
-the model is reaching its limits. The four partners are overcommitted
-and client work is starting to slip. The firm needs to decide
-whether to promote from within (creating a new partner tier from
-senior consultants), hire lateral partners from Big Four firms,
-or fundamentally restructure how engagements are staffed. Meanwhile,
-a state government department has approached Meridian about a
-large-scale digital transformation program that would be the
-firm's biggest engagement — but it would require dedicating a
-partner full-time for 18 months.</p>
+                <p>{{ (scenario.description or "")|trim }}</p>
 
                 <p class="pov-pull">
                     "We are one bad quarter from burning out our best people. The partner track question is no longer hypothetical."
                     <cite>— Catherine Wu, Managing Partner</cite>
                 </p>
 
+                {% if scenario.key_tensions %}
                 <dl class="tensions-table">
-                    <dt>Tension 01</dt>
-                    <dd>Partner-led quality vs. scalability</dd>
-                    <dt>Tension 02</dt>
-                    <dd>Internal promotion vs. lateral hires — cultural fit risk</dd>
-                    <dt>Tension 03</dt>
-                    <dd>Government mega-deal vs. diverse client portfolio</dd>
-                    <dt>Tension 04</dt>
-                    <dd>Graduate development vs. immediate billable utilisation</dd>
-                    <dt>Tension 05</dt>
-                    <dd>Work-life balance at partner level — burnout risk</dd>
+                    {% for tension in scenario.key_tensions[:6] %}
+                    <dt>Tension 0{{ loop.index }}</dt>
+                    <dd>{{ tension }}</dd>
+                    {% endfor %}
                 </dl>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -293,44 +201,4 @@ partner full-time for 18 months.</p>
         </div>
     </div>
 </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h3>Meridian Advisory</h3>
-                <p>A boutique management consulting firm based in Perth, working with mid-market and government clients across Western Australia. Founded 2014.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Firm</h4>
-                <ul>
-                    <li><a href="/about.html">About</a></li>
-                    <li><a href="/practices.html">Practices</a></li>
-                    <li><a href="/careers.html">Careers</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>For Staff</h4>
-                <ul>
-                    <li><a href="/staff/">Staff portal</a></li>
-                    <li><a href="/staff/directory.html">Directory</a></li>
-                    <li><a href="/staff/documents.html">Documents</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Affiliations</h4>
-                <ul>
-                    <li><a href="#">CMC Australia</a></li>
-                    <li><a href="#">Probity standards</a></li>
-                    <li><a href="#">Independence policy</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 MERIDIAN ADVISORY PARTNERSHIP / ABN 00 000 000 000</p>
-            <p class="footer-disclaimer">A fictional firm, made for a Curtin University internship simulation.</p>
-        </div>
-    </footer>
-</body>
-</html>
+{% endblock %}
