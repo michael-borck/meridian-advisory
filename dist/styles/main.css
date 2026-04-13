@@ -1202,6 +1202,22 @@ section {
 }
 
 /* ============================================================
+   APPLY FORM
+   ============================================================ */
+
+.apply-section { padding: var(--md-px-8) 0; background: var(--md-bg-2); border-top: 1px solid var(--md-line); }
+.apply-form { max-width: 640px; display: grid; gap: var(--md-px-3); }
+.apply-form label { display: block; font-family: var(--md-font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--md-text-muted); margin-bottom: var(--md-px-1); font-weight: 500; }
+.apply-form input, .apply-form textarea { width: 100%; padding: var(--md-px-3); background: var(--md-bg); border: 1px solid var(--md-line-2); color: var(--md-text); font-family: var(--md-font-body); font-size: 0.95rem; }
+.apply-form input:focus, .apply-form textarea:focus { outline: none; border-color: var(--md-accent); box-shadow: 0 0 0 2px rgba(212, 38, 42, 0.2); }
+.apply-form textarea { resize: vertical; min-height: 100px; }
+.apply-form input[type="file"] { padding: var(--md-px-2); }
+.apply-required { color: var(--md-accent); }
+.apply-result { display: none; padding: var(--md-px-3); margin-top: var(--md-px-3); font-size: 0.92rem; }
+.apply-result-success { background: rgba(31, 107, 62, 0.15); border: 1px solid var(--md-success); color: var(--md-success); }
+.apply-result-error { background: rgba(212, 38, 42, 0.1); border: 1px solid var(--md-accent); color: var(--md-accent); }
+
+/* ============================================================
    FOOTER
    ============================================================ */
 

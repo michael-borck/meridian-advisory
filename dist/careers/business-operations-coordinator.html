@@ -7,6 +7,7 @@
     <meta name="description" content="Meridian is a boutique Western Australian management consulting firm. Strategy, operations, digital transformation, and government policy advisory — partner-led on every engagement.">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="stylesheet" href="/styles/main.css">
+<script src="/scripts/apply.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -118,18 +119,41 @@
     </div>
 </section>
 
-<section class="contact-block">
+<section class="apply-section" id="apply">
     <div class="marg">
         <aside class="marg-aside">
             <span class="label">Apply</span>
-            <p class="section-num" style="color: rgba(255,255,255,0.5); margin-top: var(--md-px-2);">03 / Submit</p>
+            <p class="section-num" style="margin-top: var(--md-px-2);">03 / Submit</p>
         </aside>
         <div>
+            <p class="eyebrow">Apply for this role</p>
             <h2>Submit your application.</h2>
-            <p>A CV and a one-page letter on a problem you have helped solve. Read by a partner, replied to within five business days.</p>
-            <div class="hero-cta">
-                <a href="https://meridianadvisory.eduserver.au" class="btn btn-primary btn-arrow">Apply via WorkReady</a>
-            </div>
+            <p class="hero-tagline">A CV and a one-page letter on a problem you have helped solve. Read by a partner, replied to within five business days.</p>
+
+            <form id="apply-form" class="apply-form" data-api-base="https://workready-api.eduserver.au">
+                <input type="hidden" name="posting_id" value="">
+                <input type="hidden" name="job_title" value="Business Operations Coordinator">
+                <div>
+                    <label for="applicant_name">Full name <span class="apply-required">*</span></label>
+                    <input type="text" name="applicant_name" id="applicant_name" required>
+                </div>
+                <div>
+                    <label for="applicant_email">Email address <span class="apply-required">*</span></label>
+                    <input type="email" name="applicant_email" id="applicant_email" required placeholder="firstname.lastname@student.curtin.edu.au">
+                </div>
+                <div>
+                    <label for="cover_letter">Cover letter</label>
+                    <textarea name="cover_letter" id="cover_letter" rows="5" placeholder="Tell us why you're a good fit for this role…"></textarea>
+                </div>
+                <div>
+                    <label for="resume">Resume (PDF) <span class="apply-required">*</span></label>
+                    <input type="file" name="resume" id="resume" accept=".pdf" required>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary btn-arrow">Submit application</button>
+                </div>
+                <div id="apply-result" class="apply-result"></div>
+            </form>
         </div>
     </div>
 </section>
