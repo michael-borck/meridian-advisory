@@ -303,6 +303,29 @@ documents:
     title: "Flexible Work and Leave Policy"
     brief: "Policy covering flexible hours, remote work, purchased leave, and the firm's approach to work-life balance in a high-intensity consulting environment"
 
+task_templates:
+  - title: "Client meeting prep note"
+    difficulty: "easy"
+    discipline: "advisory"
+    estimated_hours: 3
+    brief: "Prepare a one-page meeting prep note for an upcoming client review \u2014 history, current issues, talking points."
+    description: |
+      A partner has a client review meeting next week and has asked you to prepare a one-page prep note. Cover: the client's history with the firm, the 2-3 live issues we're currently advising on, any signals from recent correspondence that something's changed, and 3 talking points the partner should lead with. Keep it to one page — partners skim prep notes in the lift on the way to reception.
+  - title: "Due diligence summary \u2014 acquisition target"
+    difficulty: "medium"
+    discipline: "advisory"
+    estimated_hours: 6
+    brief: "Draft a due diligence summary for a small acquisition target \u2014 financials, risks, go/no-go recommendation."
+    description: |
+      A client is considering acquiring a small competitor ($5-8M revenue). Draft a due diligence summary covering: financial health (top-line, margin, cash position, any oddities), key risks (customer concentration, key-person dependency, undisclosed liabilities), cultural fit with the client's operation, and your go/no-go recommendation with conditions. Partners don't want a 40-page report — they want a crisp recommendation backed by evidence.
+  - title: "Restructure advisory \u2014 mid-market client in distress"
+    difficulty: "hard"
+    discipline: "advisory"
+    estimated_hours: 8
+    brief: "Draft an initial advisory memo for a mid-market client in financial distress \u2014 options, trade-offs, recommended path."
+    description: |
+      A mid-market client has come to us in genuine financial distress — cash runway of roughly 4 months, a major customer has not renewed, and the bank is watching. Draft an initial advisory memo covering: (1) the realistic options (informal workout, formal restructure, trade sale, wind-down), (2) the trade-offs of each for the owners, employees, and creditors, (3) your recommended path and the first 30 days of actions if they accept it, and (4) the hard conversations we'd need to have with the owners before they decide. This is the memo that would go in front of the partner before we pick up the phone.
+
 jobs:
   - title: "Graduate Consultant"
     department: "Consulting"
